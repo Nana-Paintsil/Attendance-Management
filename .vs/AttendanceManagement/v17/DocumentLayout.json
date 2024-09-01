@@ -1,0 +1,860 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\pages\\manageemployees.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\pages\\manageemployees.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\pages\\dashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\pages\\dashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\pages\\loginform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\pages\\loginform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\layout\\nomenulayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\layout\\nomenulayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\layout\\modal.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\layout\\modal.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\pages\\rolesschedule.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\pages\\rolesschedule.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\pages\\attendance_logs.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\pages\\attendance_logs.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\viewmodels\\authenticationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\viewmodels\\authenticationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\services\\analysisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\services\\analysisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\attendancemanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:attendancemanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\services\\isavefile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\services\\isavefile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\models\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\models\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\models\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\models\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\services\\shopservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\services\\shopservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\pages\\dashboard.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\pages\\dashboard.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\services\\syncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\services\\syncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\services\\isyncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\services\\isyncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\wwwroot\\css\\fontawesome\\css\\all.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:wwwroot\\css\\fontawesome\\css\\all.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\wwwroot\\favicon.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:wwwroot\\favicon.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\layout\\checksuccessful.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\layout\\checksuccessful.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\services\\smsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\services\\smsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\models\\logentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\models\\logentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\AppData\\Local\\SourceServer\\34f1000607c0f6fdfb17c49e788362bff3c6a5141676622ba854f202d5a9fd1e\\src\\libraries\\System.Private.CoreLib\\src\\System\\IO\\PathHelper.Windows.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\extensions\\secrethasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\extensions\\secrethasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\extensions\\sync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\extensions\\sync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\models\\tenantuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\models\\tenantuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\platforms\\android\\androidmanifest.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:platforms\\android\\androidmanifest.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\34.0.95\\tools\\Xamarin.Android.Common.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\models\\tblrefreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\models\\tblrefreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\extensions\\customauthenticationstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\extensions\\customauthenticationstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\.nuget\\packages\\communitytoolkit.maui\\7.0.1\\ReadMe.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\layout\\circleprogress.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\layout\\circleprogress.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\handlers\\tokenhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\handlers\\tokenhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|c:\\users\\user\\documents\\c#\\attendancemanagement\\components\\data\\handlers\\partialclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A331A602-7689-430C-BC9E-41284265C6CE}|AttendanceManagement.csproj|solutionrelative:components\\data\\handlers\\partialclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Components\\Pages\\Counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Components\\Pages\\Home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Components\\Pages\\Home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Components\\Pages\\Weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\_Imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Components\\Pages\\_Imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 106,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "all.css",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\wwwroot\\css\\fontawesome\\css\\all.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\fontawesome\\css\\all.css",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\wwwroot\\css\\fontawesome\\css\\all.css",
+              "RelativeToolTip": "wwwroot\\css\\fontawesome\\css\\all.css",
+              "ViewState": "AQIAAEYWAAAAAAAAAAAswFEWAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-17T16:07:37.718Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginForm.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\LoginForm.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\LoginForm.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\LoginForm.razor",
+              "RelativeToolTip": "Components\\Pages\\LoginForm.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-28T01:14:11.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "Components\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "Components\\Layout\\MainLayout.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-28T01:36:17.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NoMenuLayout.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Layout\\NoMenuLayout.razor",
+              "RelativeDocumentMoniker": "Components\\Layout\\NoMenuLayout.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Layout\\NoMenuLayout.razor",
+              "RelativeToolTip": "Components\\Layout\\NoMenuLayout.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-28T01:28:01.719Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dashboard.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Dashboard.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Dashboard.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Dashboard.razor",
+              "RelativeToolTip": "Components\\Pages\\Dashboard.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-28T12:16:11.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ManageEmployees.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\ManageEmployees.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\ManageEmployees.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\ManageEmployees.razor",
+              "RelativeToolTip": "Components\\Pages\\ManageEmployees.razor",
+              "ViewState": "AQIAAMMBAAAAAAAAAAAlwM0BAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-28T01:33:22.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "app.css",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\wwwroot\\css\\app.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\app.css",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\wwwroot\\css\\app.css",
+              "RelativeToolTip": "wwwroot\\css\\app.css",
+              "ViewState": "AQIAAEUFAAAAAAAAAAAowEoFAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-04-27T18:39:12.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RolesSchedule.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\RolesSchedule.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\RolesSchedule.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\RolesSchedule.razor",
+              "RelativeToolTip": "Components\\Pages\\RolesSchedule.razor",
+              "ViewState": "AQIAAHQAAAAAAAAAAAArwLgBAABTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-28T12:16:25.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\wwwroot\\index.html",
+              "RelativeToolTip": "wwwroot\\index.html",
+              "ViewState": "AQIAAHAAAAAAAAAAAAAcwIAAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-04-27T18:40:16.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Components\\Layout\\NavMenu.razor",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAlwIUAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-28T00:46:53.758Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Modal.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Layout\\Modal.razor",
+              "RelativeDocumentMoniker": "Components\\Layout\\Modal.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Layout\\Modal.razor",
+              "RelativeToolTip": "Components\\Layout\\Modal.razor",
+              "ViewState": "AQIAADAAAAAAAAAAAAAkwDgAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-07T06:25:53.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "MauiProgram.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\MauiProgram.cs",
+              "RelativeToolTip": "MauiProgram.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAYwFEAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T01:39:09.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "Components\\_Imports.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\_Imports.razor",
+              "RelativeToolTip": "Components\\_Imports.razor",
+              "ViewState": "AQIAABAAAAAAAAAAAIBJwCIAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-26T04:20:22.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\WeatherForecast.cs",
+              "RelativeToolTip": "Components\\Data\\WeatherForecast.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAEwAoAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T12:10:28.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Attendance_Logs.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Attendance_Logs.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Attendance_Logs.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Attendance_Logs.razor",
+              "RelativeToolTip": "Components\\Pages\\Attendance_Logs.razor",
+              "ViewState": "AQIAAEUAAAAAAAAAAIBJwE0AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-28T01:15:16.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AnalysisService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Services\\AnalysisService.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\Services\\AnalysisService.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Services\\AnalysisService.cs",
+              "RelativeToolTip": "Components\\Data\\Services\\AnalysisService.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAArwCsAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T04:31:11.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AuthenticationViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\ViewModels\\AuthenticationViewModel.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\ViewModels\\AuthenticationViewModel.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\ViewModels\\AuthenticationViewModel.cs",
+              "RelativeToolTip": "Components\\Data\\ViewModels\\AuthenticationViewModel.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAMwCEAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T01:26:31.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AttendanceManagement.csproj",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\AttendanceManagement.csproj",
+              "RelativeDocumentMoniker": "AttendanceManagement.csproj",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\AttendanceManagement.csproj",
+              "RelativeToolTip": "AttendanceManagement.csproj",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAewGsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-28T11:51:36.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Routes.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Routes.razor",
+              "RelativeDocumentMoniker": "Components\\Routes.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Routes.razor",
+              "RelativeToolTip": "Components\\Routes.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-27T18:44:12.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\_Imports.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\_Imports.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\_Imports.razor",
+              "RelativeToolTip": "Components\\Pages\\_Imports.razor",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-27T18:44:13.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ISaveFile.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Services\\ISaveFile.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\Services\\ISaveFile.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Services\\ISaveFile.cs",
+              "RelativeToolTip": "Components\\Data\\Services\\ISaveFile.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAqwAsAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T18:03:40.045Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\MainPage.xaml",
+              "RelativeDocumentMoniker": "MainPage.xaml",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\MainPage.xaml",
+              "RelativeToolTip": "MainPage.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-26T03:07:46.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "MyDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Models\\MyDbContext.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\Models\\MyDbContext.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Models\\MyDbContext.cs",
+              "RelativeToolTip": "Components\\Data\\Models\\MyDbContext.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBIAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T01:29:17.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "App.g.i.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
+              "RelativeDocumentMoniker": "obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
+              "RelativeToolTip": "obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAlwEMAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T16:58:21.975Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Constants.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Models\\Constants.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\Models\\Constants.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Models\\Constants.cs",
+              "RelativeToolTip": "Components\\Data\\Models\\Constants.cs",
+              "ViewState": "AQIAAPIDAAAAAAAAACBjwAoEAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T16:13:44.099Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ShopServices.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Services\\ShopServices.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\Services\\ShopServices.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Services\\ShopServices.cs",
+              "RelativeToolTip": "Components\\Data\\Services\\ShopServices.cs",
+              "ViewState": "AQIAAG8NAAAAAAAAAAD4v3kNAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T04:39:50.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Dashboard.razor.css",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Dashboard.razor.css",
+              "RelativeDocumentMoniker": "Components\\Pages\\Dashboard.razor.css",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Dashboard.razor.css",
+              "RelativeToolTip": "Components\\Pages\\Dashboard.razor.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-01T15:52:12.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "SyncService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Services\\SyncService.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\Services\\SyncService.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Services\\SyncService.cs",
+              "RelativeToolTip": "Components\\Data\\Services\\SyncService.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAAwBMAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T01:25:47.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ISyncService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Services\\ISyncService.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\Services\\ISyncService.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Services\\ISyncService.cs",
+              "RelativeToolTip": "Components\\Data\\Services\\ISyncService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T01:26:23.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Counter.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Counter.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Counter.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Counter.razor",
+              "RelativeToolTip": "Components\\Pages\\Counter.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-17T16:18:26.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Components\\Pages\\Home.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-27T18:24:58.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "NavMenu.razor.css",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Layout\\NavMenu.razor.css",
+              "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor.css",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Layout\\NavMenu.razor.css",
+              "RelativeToolTip": "Components\\Layout\\NavMenu.razor.css",
+              "ViewState": "AQIAACgAAAAAAAAAAAAwwDUAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-09T17:39:19.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "MainLayout.razor.css",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Layout\\MainLayout.razor.css",
+              "RelativeDocumentMoniker": "Components\\Layout\\MainLayout.razor.css",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Layout\\MainLayout.razor.css",
+              "RelativeToolTip": "Components\\Layout\\MainLayout.razor.css",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAwwA0AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-04-28T01:36:16.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "favicon.png - PNG [32x32, 32 bit, PNG]",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\wwwroot\\favicon.png",
+              "RelativeDocumentMoniker": "wwwroot\\favicon.png",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\wwwroot\\favicon.png - PNG [32x32, 32 bit, PNG]",
+              "RelativeToolTip": "wwwroot\\favicon.png - PNG [32x32, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-06-01T17:19:19.416Z",
+              "EditorCaption": " - PNG [32x32, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "SmsService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Services\\SmsService.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\Services\\SmsService.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Services\\SmsService.cs",
+              "RelativeToolTip": "Components\\Data\\Services\\SmsService.cs",
+              "ViewState": "AQIAAHcAAAAAAAAAAAAtwIUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T21:48:19.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "CheckSuccessful.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Layout\\CheckSuccessful.razor",
+              "RelativeDocumentMoniker": "Components\\Layout\\CheckSuccessful.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Layout\\CheckSuccessful.razor",
+              "RelativeToolTip": "Components\\Layout\\CheckSuccessful.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-28T01:15:14.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "Home.razor.css",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Home.razor.css",
+              "RelativeDocumentMoniker": "Components\\Pages\\Home.razor.css",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Home.razor.css",
+              "RelativeToolTip": "Components\\Pages\\Home.razor.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-04-28T01:12:36.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "LogEntry.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Models\\LogEntry.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\Models\\LogEntry.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Models\\LogEntry.cs",
+              "RelativeToolTip": "Components\\Data\\Models\\LogEntry.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T01:16:44.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "PathHelper.Windows.cs",
+              "DocumentMoniker": "C:\\Users\\user\\AppData\\Local\\SourceServer\\34f1000607c0f6fdfb17c49e788362bff3c6a5141676622ba854f202d5a9fd1e\\src\\libraries\\System.Private.CoreLib\\src\\System\\IO\\PathHelper.Windows.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\SourceServer\\34f1000607c0f6fdfb17c49e788362bff3c6a5141676622ba854f202d5a9fd1e\\src\\libraries\\System.Private.CoreLib\\src\\System\\IO\\PathHelper.Windows.cs",
+              "ToolTip": "C:\\Users\\user\\AppData\\Local\\SourceServer\\34f1000607c0f6fdfb17c49e788362bff3c6a5141676622ba854f202d5a9fd1e\\src\\libraries\\System.Private.CoreLib\\src\\System\\IO\\PathHelper.Windows.cs",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\SourceServer\\34f1000607c0f6fdfb17c49e788362bff3c6a5141676622ba854f202d5a9fd1e\\src\\libraries\\System.Private.CoreLib\\src\\System\\IO\\PathHelper.Windows.cs",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAtwEwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T16:23:07.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "SecretHasher.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Extensions\\SecretHasher.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\Extensions\\SecretHasher.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Extensions\\SecretHasher.cs",
+              "RelativeToolTip": "Components\\Data\\Extensions\\SecretHasher.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T01:31:44.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Sync.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Extensions\\Sync.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\Extensions\\Sync.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Extensions\\Sync.cs",
+              "RelativeToolTip": "Components\\Data\\Extensions\\Sync.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAawAsAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T01:24:37.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Weather.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Weather.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Weather.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Pages\\Weather.razor",
+              "RelativeToolTip": "Components\\Pages\\Weather.razor",
+              "ViewState": "AQIAAAEAAAAAAAAAAGCHwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-28T11:57:40.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "CustomAuthenticationStateProvider.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Extensions\\CustomAuthenticationStateProvider.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\Extensions\\CustomAuthenticationStateProvider.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Extensions\\CustomAuthenticationStateProvider.cs",
+              "RelativeToolTip": "Components\\Data\\Extensions\\CustomAuthenticationStateProvider.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T01:20:09.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "TenantUser.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Models\\TenantUser.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\Models\\TenantUser.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Models\\TenantUser.cs",
+              "RelativeToolTip": "Components\\Data\\Models\\TenantUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T11:16:44.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "AndroidManifest.xml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeDocumentMoniker": "Platforms\\Android\\AndroidManifest.xml",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeToolTip": "Platforms\\Android\\AndroidManifest.xml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2024-04-28T10:52:56.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Xamarin.Android.Common.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\34.0.95\\tools\\Xamarin.Android.Common.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\34.0.95\\tools\\Xamarin.Android.Common.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\34.0.95\\tools\\Xamarin.Android.Common.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\34.0.95\\tools\\Xamarin.Android.Common.targets",
+              "ViewState": "AQIAAAkKAAAAAAAAAAAQwBMKAAB6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-04-28T10:49:35.15Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "TblRefreshToken.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Models\\TblRefreshToken.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\Models\\TblRefreshToken.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Models\\TblRefreshToken.cs",
+              "RelativeToolTip": "Components\\Data\\Models\\TblRefreshToken.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T10:41:27.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "ReadMe.txt",
+              "DocumentMoniker": "C:\\Users\\user\\.nuget\\packages\\communitytoolkit.maui\\7.0.1\\ReadMe.txt",
+              "RelativeDocumentMoniker": "..\\..\\..\\.nuget\\packages\\communitytoolkit.maui\\7.0.1\\ReadMe.txt",
+              "ToolTip": "C:\\Users\\user\\.nuget\\packages\\communitytoolkit.maui\\7.0.1\\ReadMe.txt",
+              "RelativeToolTip": "..\\..\\..\\.nuget\\packages\\communitytoolkit.maui\\7.0.1\\ReadMe.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-04-28T01:46:07.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "CircleProgress.razor",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Layout\\CircleProgress.razor",
+              "RelativeDocumentMoniker": "Components\\Layout\\CircleProgress.razor",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Layout\\CircleProgress.razor",
+              "RelativeToolTip": "Components\\Layout\\CircleProgress.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-28T01:34:29.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "TokenHandler.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Handlers\\TokenHandler.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\Handlers\\TokenHandler.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Handlers\\TokenHandler.cs",
+              "RelativeToolTip": "Components\\Data\\Handlers\\TokenHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwA8AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T01:23:31.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "BaseViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\ViewModels\\BaseViewModel.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\ViewModels\\BaseViewModel.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\ViewModels\\BaseViewModel.cs",
+              "RelativeToolTip": "Components\\Data\\ViewModels\\BaseViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T01:23:53.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "PartialClient.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Handlers\\PartialClient.cs",
+              "RelativeDocumentMoniker": "Components\\Data\\Handlers\\PartialClient.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\C#\\AttendanceManagement\\Components\\Data\\Handlers\\PartialClient.cs",
+              "RelativeToolTip": "Components\\Data\\Handlers\\PartialClient.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAKB7wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T01:16:22.011Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 419,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

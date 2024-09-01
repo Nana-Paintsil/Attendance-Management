@@ -1,0 +1,35 @@
+﻿@using System.Net.Http
+@using System.Net.Http.Json
+@using AttendanceManagement.Data
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.JSInterop
+@using AttendanceManagement
+@using AttendanceManagement.Components
+@using AttendanceManagement.Components.Layout
+@using AttendanceManagement.Extensions
+@using AttendanceManagement.Models
+@using Microsoft.EntityFrameworkCore
+@using AttendanceManagement.ViewModels
+@using AttendanceManagement.Services
+@using AttendanceManagement.Components.Data.Services
+@using AttendanceManagement.Handlers
+@using Syncfusion.Pdf;
+@using Syncfusion.Pdf.Graphics;
+@using Syncfusion.Pdf.Grid;
+@using Syncfusion.Drawing;
+
+
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject OnlineAuthenticationStateProvider OnlineAuthenticationStateProvider
+@inject NavigationManager NavigationManager
+@inject MyDbContext MyDbContext
+@inject Sync Sync
+@inject MessageService MessageService
+@inject AnalysisService AnalysisService
+@inject IJSRuntime JSRuntime
+@inject ILogoutService LogoutService

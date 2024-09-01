@@ -1,0 +1,682 @@
+﻿@page "/roles_schedule"
+@using System.Threading.Tasks
+
+
+
+<style>
+    tr:hover {
+    background-color: #fefefe;
+    cursor: pointer;
+    }
+</style>
+
+<Modal IsVisible="@isManageStaffTypeVisible" Width="400px" IsVisibleChanged="HandleIsVisibleChanged">
+    <div class="modal-header">
+        <h3 style="font-size: 1.2rem;">Manage Staff Types</h3>
+        <button class="close-button" @onclick="ToggleShowStaffTypeModal">X</button>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="staffType">Staff Type <sup>*</sup></label>
+            <input type="text" id="staffType" class="form-control" placeholder="Enter Staff Type" @bind="@typeOfStaff.StaffType">
+        </div>
+        <div class="form-group">
+            <label for="idPrefix">ID Prefix <sup>*</sup></label>
+            <input type="text" id="idPrefix" class="form-control" placeholder="Enter ID Prefix" @bind="@typeOfStaff.IdPrefix">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" style="margin-right: 8px" @onclick="AddOrUpdateStaffTypeAndClose">Save Changes</button>
+        <button class="btn btn-secondary" @onclick="ToggleShowStaffTypeModal">Cancel</button>
+    </div>
+</Modal>
+
+<Modal IsVisible="@isManageHolidayVisible" Width="400px" IsVisibleChanged="HandleIsVisibleChanged2">
+    <div class="modal-header">
+        <h3 style="font-size: 1.2rem;">Manage Holiday</h3>
+        <button class="close-button" @onclick="ToggleShowHoliday">X</button>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="holidayName">Holiday Name <sup>*</sup></label>
+            <input type="text" id="holidayName" class="form-control" placeholder="Enter Holiday Name" @bind="@holiday.Name">
+        </div>
+        <div class="form-group">
+            <label for="startDate">Start Date <sup>*</sup></label>
+            <input @onclick:stopPropagation="true" style="margin-left: 10px; height: 2.7rem;width: 50%; border: 1px solid grey;" type="date" @bind-value="holiday.StartDate"
+            @bind-value:event="oninput" placeholder="Search">
+        </div>
+        <div class="form-group">
+            <label for="endDate">End Date <sup>*</sup></label>
+            <input @onclick:stopPropagation="true" style="margin-left: 17px; height: 2.7rem;width: 50%; border: 1px solid grey;" type="date" @bind-value="holiday.EndDate"
+            @bind-value:event="oninput" placeholder="Search">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" style="margin-right: 8px" @onclick="AddOrUpdateHolidayAndClose">Save Holiday</button>
+        <button class="btn btn-secondary" @onclick="ToggleShowHoliday">Cancel</button>
+    </div>
+</Modal>
+
+
+
+<Modal IsVisible="@showDeleteStaffType" IsVisibleChanged="HandleDeleteStaffTypeChanged">
+    <div class="modal-header">
+        <h3 style="font-size: 1.2rem;">Confirm Deletion</h3>
+    </div>
+    <div class="modal-body">
+        <p>
+            Are you sure you want to delete this record? This action cannot be undone.
+        </p>
+    </div>
+
+    <div class="modal-footer" style="align-items: flex-end">
+
+        <button class="btn btn-primary btn-small" style="margin-right: 8px" @onclick="ToggleDeleteStaffTypeClose">No</button>
+        <button class="btn btn-secondary btn-small" @onclick="DeleteStaffType">Yes</button>
+    </div>
+</Modal>
+
+
+<Modal IsVisible="@showDeleteHoliday" IsVisibleChanged="HandleDeleteHolidayChanged">
+    <div class="modal-header">
+        <h3 style="font-size: 1.2rem;">Confirm Deletion</h3>
+    </div>
+    <div class="modal-body">
+        <p>
+            Are you sure you want to delete this record? This action cannot be undone.
+        </p>
+    </div>
+
+    <div class="modal-footer" style="align-items: flex-end">
+
+        <button class="btn btn-primary btn-small" style="margin-right: 8px" @onclick="ToggleDeleteHolidayClose">No</button>
+        <button class="btn btn-secondary btn-small" @onclick="DeleteHoliday">Yes</button>
+    </div>
+</Modal>
+
+
+@if (isBusy == false){
+    <div style="height: 100%;display: flex;margin: 10px 20px;box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);">
+        <div style="width: 50%; padding: 20px;">
+            <p><b>Academic Year Information</b></p>
+    
+        <div class="termGrid" style="margin-bottom: 20px">
+            <h6>Academic Year:</h6>
+            <div>
+                <div class="termGrid">
+                    <h6></h6>
+                    <div style="display: flex; align-items: center">
+                            <input type="number" min="1900" max="2099" step="1" @bind="academicYearStartYear" @bind:event="oninput" @onchange="HandleInputChange" />
+                            <div style="margin-left: 2px;margin-right: 2px">/</div>
+                            <input type="number" min="1900" max="2099" style="background-color: #e8e8e8" step="1" value="@($"{academicYearStartYear + 1}")" readonly />
+                    </div>
+                        
+                </div>
+            </div>
+        </div>
+
+        <div>
+            
+                <div class="termGrid" style="align-items: start;margin-bottom: 20px">
+                <h6>Term 1:</h6>
+                <div>
+                    <div class="termGrid">
+                        <h6>Start:</h6>
+                            <input style="border: 1px solid grey;" type="date" @bind-value="academicYear.Terms.FirstOrDefault(e => e.Name == term1).StartDate"
+                        @bind-value:event="oninput" placeholder="Search">
+                    </div>
+                    <div class="termGrid">
+                        <h6>End:</h6>
+                            <input style="border: 1px solid grey;" type="date" @bind-value="academicYear.Terms.FirstOrDefault(e => e.Name == term1).EndDate"
+                        @bind-value:event="oninput" placeholder="Search">
+                    </div>
+                </div>
+            </div>
+                <div class="termGrid" style="align-items: start;margin-bottom: 20px">
+                <h6>Term 2:</h6>
+                <div>
+                    <div class="termGrid">
+                        <h6>Start:</h6>
+                            <input style="border: 1px solid grey;" type="date" @bind-value="academicYear.Terms.FirstOrDefault(e => e.Name == term2).StartDate"
+                        @bind-value:event="oninput" placeholder="Search">
+                    </div>
+                    <div class="termGrid">
+                        <h6>End:</h6>
+                            <input style="border: 1px solid grey;" type="date" @bind-value="academicYear.Terms.FirstOrDefault(e => e.Name == term2).EndDate"
+                        @bind-value:event="oninput" placeholder="Search">
+                    </div>
+                </div>
+            </div>
+            <div class="termGrid" style="align-items: start;margin-bottom: 20px">
+                <h6>Term 3:</h6>
+                <div>
+                    <div class="termGrid">
+                        <h6>Start:</h6>
+                            <input style="border: 1px solid grey;" type="date" @bind-value="academicYear.Terms.FirstOrDefault(e => e.Name == term3).StartDate"
+                        @bind-value:event="oninput" placeholder="Search">
+                    </div>
+                    <div class="termGrid">
+                        <h6>End:</h6>
+                            <input style="border: 1px solid grey;" type="date" @bind-value="academicYear.Terms.FirstOrDefault(e => e.Name == term3).EndDate"
+                        @bind-value:event="oninput" placeholder="Search">
+                    </div>
+                </div>
+            </div>
+                <div class="termGrid">
+                    <h6></h6>
+                    <div>
+                        <div>
+                        </div>
+                        <div style="
+    display: flex;
+    justify-content: end;
+">
+                            <button class="btn btn-secondary" @onclick="SaveOrUpdateAcademicYear">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+
+    </div>
+        <div style="margin:20px;border-right: 1px solid #e8e8e8"></div>
+    <div style="width: 50%;" >
+              <div style="padding: 20px">
+            <div style="display: flex;justify-content: space-between; align-items: center">
+                <div style="display: flex; flex-direction: column">
+                    <h6><b>Type Of Staff</b></h6>
+                </div>
+                        <button class="btn btn-primary" style="margin-bottom: 10px" @onclick="ToggleShowStaffTypeModal">Add New Type</button>
+            
+        </div>
+                    <div class="tableFixHead" style="max-height: calc(50vh - 110px);">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Id Prefix</th>
+                            <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in typesOfStaff.Where(e => e.IsDeleted == false))
+                    {
+                                    <tr @onclick="() => { typeOfStaff = item ; ToggleShowStaffTypeModal(); }">
+                            <td>@item.StaffType</td>
+                            <td>@item.IdPrefix</td>
+                                        <td>
+                                            <div style="height:30px" @onclick:stopPropagation="true" @onclick="() => { typeOfStaff = item ; ToggleDeleteStaffTypeClose();}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="100%" id="Layer_2" data-name="Layer 2" viewBox="0 0 512 512">
+                                                    <g id="Layer_1-2" data-name="Layer 1">
+                                                        <g>
+
+                                                            <path d="M189.23,58.27c0-9.04.11-17.29-.04-25.53-.1-5.1,2.11-7.36,7.21-7.36,46.95.05,93.91.07,140.86-.01,5.32,0,7.12,2.55,7.06,7.44-.1,8.23-.03,16.47-.03,25.48,3.24,0,5.78,0,8.31,0,24.66,0,49.33.17,73.99-.09,6.5-.07,8.94,2.35,8.86,8.71-.2,16.12-.17,32.24-.02,48.36.05,5.95-2.19,8.74-8.42,8.38-5.88-.33-11.79-.07-18.25-.07-.58,8.33-1.3,16.28-1.67,24.25-3.01,63.91-5.9,127.82-8.92,191.73-1.75,36.92-3.81,73.83-5.37,110.77-.31,7.31-3.99,8.53-10.03,8.51-47.9-.1-95.8-.07-143.7-.08-29.17,0-58.34,0-87.5-.05-9.82-.01-10.31-.77-10.77-10.42-2.11-43.78-4.41-87.56-6.57-131.34-1.63-33.13-3.12-66.27-4.69-99.41-1.48-30.99-2.99-61.97-4.53-93.94-6.25,0-12.32-.17-18.37.05-5.98.21-8.62-2.2-8.53-8.38.21-16.12.24-32.24-.02-48.36-.11-6.57,2.73-8.75,8.98-8.71,27.02.16,54.04.07,82.18.07ZM135.91,123.91c5.23,108.31,10.43,216.04,15.62,323.57h230.37c5.21-108.06,10.4-215.63,15.61-323.57H135.91ZM109.36,112.22h314.51v-42.41H109.36v42.41ZM200.54,57.87h132.22v-21.35h-132.22v21.35Z" stroke-width="0" />
+                                                            <path d="M135.91,123.91h261.61c-5.21,107.94-10.4,215.51-15.61,323.57h-230.37c-5.19-107.53-10.39-215.26-15.62-323.57ZM209.43,287.33s.03,0,.04,0c0-38.6,0-77.19,0-115.79,0-1.65.49-3.66-.26-4.88-1.09-1.79-3.26-4.35-4.67-4.17-1.96.24-4.5,2.4-5.22,4.32-.94,2.51-.42,5.6-.42,8.44,0,73.16,0,146.33.02,219.49,0,3.79-.42,7.69.36,11.32.41,1.9,3.34,4.88,4.56,4.62,2.06-.43,4.12-2.77,5.32-4.82.84-1.43.27-3.7.27-5.59,0-37.65,0-75.3,0-112.95ZM261.41,286.65c0,37.88,0,75.77,0,113.65,0,2.13-.57,4.63.35,6.28,1.04,1.88,3.36,3.92,5.31,4.13,1.45.15,3.69-2.26,4.64-4.03.8-1.49.31-3.7.31-5.59,0-75.05,0-150.11-.01-225.16,0-2.6.54-5.42-.27-7.75-.79-2.26-3.01-4.01-4.6-5.99-1.87,1.95-4.33,3.61-5.43,5.92-.92,1.95-.29,4.65-.29,7.02,0,37.17,0,74.35-.01,111.52ZM323.85,287.24h.07c0,37.93,0,75.86.01,113.79,0,1.89-.5,4.2.39,5.58,1.18,1.85,3.39,3.9,5.34,4.11,1.41.15,3.63-2.29,4.56-4.06.79-1.51.29-3.71.29-5.6.01-75.87.05-151.73-.04-227.6,0-4.35,1.94-11.01-5.23-11.04-7.18-.02-5.28,6.73-5.3,11.03-.16,37.93-.09,75.86-.09,113.8Z" fill="transparent" stroke-width="0" />
+                                                            <path d="M109.36,112.22v-42.41h314.51v42.41H109.36Z" fill="transparent" stroke-width="0" />
+                                                            <path d="M200.54,57.87v-21.35h132.22v21.35h-132.22Z" fill="transparent" stroke-width="0" />
+                                                            <path d="M209.43,287.33c0,37.65,0,75.3,0,112.95,0,1.89.57,4.16-.27,5.59-1.2,2.04-3.26,4.39-5.32,4.82-1.22.25-4.15-2.72-4.56-4.62-.78-3.63-.36-7.53-.36-11.32-.02-73.16-.02-146.33-.02-219.49,0-2.84-.53-5.93.42-8.44.72-1.92,3.26-4.07,5.22-4.32,1.41-.18,3.58,2.38,4.67,4.17.75,1.23.26,3.23.26,4.88,0,38.6,0,77.19,0,115.79-.01,0-.03,0-.04,0Z" stroke-width="0" />
+                                                            <path d="M261.41,286.65c0-37.17,0-74.35,0-111.52,0-2.37-.63-5.07.29-7.02,1.1-2.31,3.56-3.98,5.43-5.92,1.59,1.97,3.81,3.73,4.6,5.99.82,2.33.27,5.15.27,7.75,0,75.05.01,150.11.01,225.16,0,1.89.49,4.1-.31,5.59-.96,1.77-3.2,4.18-4.64,4.03-1.95-.2-4.27-2.25-5.31-4.13-.92-1.65-.35-4.16-.35-6.28-.01-37.88,0-75.77,0-113.65Z" stroke-width="0" />
+                                                            <path d="M323.85,287.24c0-37.93-.07-75.86.09-113.8.02-4.3-1.88-11.05,5.3-11.03,7.17.02,5.22,6.69,5.23,11.04.09,75.87.05,151.73.04,227.6,0,1.9.5,4.1-.29,5.6-.93,1.77-3.15,4.21-4.56,4.06-1.95-.21-4.16-2.26-5.34-4.11-.88-1.38-.38-3.68-.39-5.58-.01-37.93-.01-75.86-.01-113.79h-.07Z" stroke-width="0" />
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                        </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+            <div style="padding: 20px">
+                <div style="display: flex;justify-content: space-between; align-items: center">
+                    <div style="display: flex; flex-direction: column">
+                        <h6><b>Holidays</b></h6>
+                    </div>
+                        <button class="btn btn-primary" style="margin-bottom: 10px" @onclick="ToggleShowHoliday">Add New Holiday</button>
+
+                </div>
+                    <div class="tableFixHead" style="max-height: calc(50vh  - 110px);">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Holiday</th>
+                                <th>Start</th>
+                                <th>End</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                                @foreach (var item in holidays.Where(e => e.IsDeleted == false))
+                                {
+                                    <tr @onclick="() => { holiday = item ; ToggleShowHoliday(); }">
+                                        <td>@item.Name</td>
+                                        <td>@item.StartDate.ToString("dd-MM")</td>
+                                        <td>@item.EndDate.ToString("dd-MM")</td>
+                                        <td>
+                                            <div style="height:30px" @onclick:stopPropagation="true" @onclick="() => { holiday = item ; ToggleDeleteHolidayClose();}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="100%" id="Layer_2" data-name="Layer 2" viewBox="0 0 512 512">
+                                                    <g id="Layer_1-2" data-name="Layer 1">
+                                                        <g>
+
+                                                            <path d="M189.23,58.27c0-9.04.11-17.29-.04-25.53-.1-5.1,2.11-7.36,7.21-7.36,46.95.05,93.91.07,140.86-.01,5.32,0,7.12,2.55,7.06,7.44-.1,8.23-.03,16.47-.03,25.48,3.24,0,5.78,0,8.31,0,24.66,0,49.33.17,73.99-.09,6.5-.07,8.94,2.35,8.86,8.71-.2,16.12-.17,32.24-.02,48.36.05,5.95-2.19,8.74-8.42,8.38-5.88-.33-11.79-.07-18.25-.07-.58,8.33-1.3,16.28-1.67,24.25-3.01,63.91-5.9,127.82-8.92,191.73-1.75,36.92-3.81,73.83-5.37,110.77-.31,7.31-3.99,8.53-10.03,8.51-47.9-.1-95.8-.07-143.7-.08-29.17,0-58.34,0-87.5-.05-9.82-.01-10.31-.77-10.77-10.42-2.11-43.78-4.41-87.56-6.57-131.34-1.63-33.13-3.12-66.27-4.69-99.41-1.48-30.99-2.99-61.97-4.53-93.94-6.25,0-12.32-.17-18.37.05-5.98.21-8.62-2.2-8.53-8.38.21-16.12.24-32.24-.02-48.36-.11-6.57,2.73-8.75,8.98-8.71,27.02.16,54.04.07,82.18.07ZM135.91,123.91c5.23,108.31,10.43,216.04,15.62,323.57h230.37c5.21-108.06,10.4-215.63,15.61-323.57H135.91ZM109.36,112.22h314.51v-42.41H109.36v42.41ZM200.54,57.87h132.22v-21.35h-132.22v21.35Z" stroke-width="0" />
+                                                            <path d="M135.91,123.91h261.61c-5.21,107.94-10.4,215.51-15.61,323.57h-230.37c-5.19-107.53-10.39-215.26-15.62-323.57ZM209.43,287.33s.03,0,.04,0c0-38.6,0-77.19,0-115.79,0-1.65.49-3.66-.26-4.88-1.09-1.79-3.26-4.35-4.67-4.17-1.96.24-4.5,2.4-5.22,4.32-.94,2.51-.42,5.6-.42,8.44,0,73.16,0,146.33.02,219.49,0,3.79-.42,7.69.36,11.32.41,1.9,3.34,4.88,4.56,4.62,2.06-.43,4.12-2.77,5.32-4.82.84-1.43.27-3.7.27-5.59,0-37.65,0-75.3,0-112.95ZM261.41,286.65c0,37.88,0,75.77,0,113.65,0,2.13-.57,4.63.35,6.28,1.04,1.88,3.36,3.92,5.31,4.13,1.45.15,3.69-2.26,4.64-4.03.8-1.49.31-3.7.31-5.59,0-75.05,0-150.11-.01-225.16,0-2.6.54-5.42-.27-7.75-.79-2.26-3.01-4.01-4.6-5.99-1.87,1.95-4.33,3.61-5.43,5.92-.92,1.95-.29,4.65-.29,7.02,0,37.17,0,74.35-.01,111.52ZM323.85,287.24h.07c0,37.93,0,75.86.01,113.79,0,1.89-.5,4.2.39,5.58,1.18,1.85,3.39,3.9,5.34,4.11,1.41.15,3.63-2.29,4.56-4.06.79-1.51.29-3.71.29-5.6.01-75.87.05-151.73-.04-227.6,0-4.35,1.94-11.01-5.23-11.04-7.18-.02-5.28,6.73-5.3,11.03-.16,37.93-.09,75.86-.09,113.8Z" fill="transparent" stroke-width="0" />
+                                                            <path d="M109.36,112.22v-42.41h314.51v42.41H109.36Z" fill="transparent" stroke-width="0" />
+                                                            <path d="M200.54,57.87v-21.35h132.22v21.35h-132.22Z" fill="transparent" stroke-width="0" />
+                                                            <path d="M209.43,287.33c0,37.65,0,75.3,0,112.95,0,1.89.57,4.16-.27,5.59-1.2,2.04-3.26,4.39-5.32,4.82-1.22.25-4.15-2.72-4.56-4.62-.78-3.63-.36-7.53-.36-11.32-.02-73.16-.02-146.33-.02-219.49,0-2.84-.53-5.93.42-8.44.72-1.92,3.26-4.07,5.22-4.32,1.41-.18,3.58,2.38,4.67,4.17.75,1.23.26,3.23.26,4.88,0,38.6,0,77.19,0,115.79-.01,0-.03,0-.04,0Z" stroke-width="0" />
+                                                            <path d="M261.41,286.65c0-37.17,0-74.35,0-111.52,0-2.37-.63-5.07.29-7.02,1.1-2.31,3.56-3.98,5.43-5.92,1.59,1.97,3.81,3.73,4.6,5.99.82,2.33.27,5.15.27,7.75,0,75.05.01,150.11.01,225.16,0,1.89.49,4.1-.31,5.59-.96,1.77-3.2,4.18-4.64,4.03-1.95-.2-4.27-2.25-5.31-4.13-.92-1.65-.35-4.16-.35-6.28-.01-37.88,0-75.77,0-113.65Z" stroke-width="0" />
+                                                            <path d="M323.85,287.24c0-37.93-.07-75.86.09-113.8.02-4.3-1.88-11.05,5.3-11.03,7.17.02,5.22,6.69,5.23,11.04.09,75.87.05,151.73.04,227.6,0,1.9.5,4.1-.29,5.6-.93,1.77-3.15,4.21-4.56,4.06-1.95-.21-4.16-2.26-5.34-4.11-.88-1.38-.38-3.68-.39-5.58-.01-37.93-.01-75.86-.01-113.79h-.07Z" stroke-width="0" />
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                        </td>
+                                    </tr> 
+                                }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    
+
+</div>
+}
+else
+{
+}
+<style>
+    .circle-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+        margin-top: 25px;
+    }
+
+    .circle-image {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #fff;
+    }
+
+    .label-left {
+        text-align: left;
+        width: 100%;
+        display: block;
+    }
+</style>
+
+
+@code {
+    Employee newEmployee = new();
+    private bool isManageStaffTypeVisible = false;
+    private bool isManageHolidayVisible = false;
+    private TypeOfStaff typeOfStaff = new();
+    private Holiday holiday = new();
+    int academicYearStartYear = DateTime.Now.Year;
+    AcademicYear academicYear = new();
+    List<AcademicYear> academicYears = new();
+    List<TypeOfStaff> typesOfStaff = new();
+    List<Holiday> holidays = new();
+    bool isBusy = true;
+    string term1 = "Term 1";
+    string term2 = "Term 2";
+    string term3 = "Term 3";
+
+    void HandleInputChange(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value.ToString(), out int year))
+        {
+            ChangeAcademicYearTerms(year);
+        }
+        else
+        {
+            // Handle invalid input if necessary
+        }
+    }
+
+
+    public AcademicYear GetActiveOrClosestAcademicYear(IEnumerable<AcademicYear> academicYears)
+    {
+        DateTimeOffset currentDate = DateTimeOffset.Now;
+
+        // Try to find the active academic year first
+        var activeAcademicYear = academicYears.FirstOrDefault(year =>
+            year.Terms.Any(term =>
+                term.StartDate <= currentDate &&
+                term.EndDate >= currentDate &&
+                !term.IsDeleted));
+
+        if (activeAcademicYear != null)
+        {
+            return activeAcademicYear;
+        }
+
+        // If no active academic year is found, find the closest term date
+        AcademicYear closestAcademicYear = null;
+        DateTimeOffset? closestDate = null;
+
+        foreach (var year in academicYears)
+        {
+            foreach (var term in year.Terms)
+            {
+                if (term.IsDeleted) continue;
+
+                if (closestDate == null ||
+                    Math.Abs((term.StartDate - currentDate).Ticks) < Math.Abs((closestDate.Value - currentDate).Ticks) ||
+                    Math.Abs((term.EndDate - currentDate).Ticks) < Math.Abs((closestDate.Value - currentDate).Ticks))
+                {
+                    closestDate = term.StartDate;
+                    closestAcademicYear = year;
+                }
+            }
+        }
+
+        return closestAcademicYear;
+    }
+
+
+
+    private void load(){
+
+        try
+        {   
+            holiday.StartDate  = DateTime.Now;
+            holiday.EndDate  = DateTime.Now;
+            typesOfStaff = MyDbContext.TypeOfStaffs.Where(e => e.IsDeleted == false).ToList();
+            holidays = MyDbContext.Holidays.Where(e => e.IsDeleted == false).ToList();
+
+            academicYears = MyDbContext.AcademicYears.Where(e => !e.IsDeleted).Include(e => e.Terms).ToList();
+
+            if (academicYears.Count == 0)
+            {
+                academicYear = new();
+                 academicYear.Terms = new List<Term>();
+
+            Term term1 = new()
+                {
+                    Id = Guid.NewGuid(),
+                    StartDate = DateTime.Now,
+                    EndDate = DateTime.Now,
+                    TenantId = Guid.Parse("00000000-0000-0000-0000-000000000000"),
+                    Name = "Term 1",
+                    IsActive = false
+                };
+            Term term2 = new()
+                {
+                    Id = Guid.NewGuid(),
+                    StartDate = DateTime.Now,
+                    EndDate = DateTime.Now,
+                    TenantId = Guid.Parse("00000000-0000-0000-0000-000000000000"),
+                    Name = "Term 2",
+                    IsActive = false
+                };
+            Term term3 = new()
+                {
+
+                    Id = Guid.NewGuid(),
+                    StartDate = DateTime.Now,
+                    EndDate = DateTime.Now,
+                    TenantId = Guid.Parse("00000000-0000-0000-0000-000000000000"),
+                    Name = "Term 3",
+                    IsActive = false
+                };
+            academicYear.Terms.Add(term1);
+            academicYear.Terms.Add(term2);
+            academicYear.Terms.Add(term3);
+
+            }else{
+                academicYear = GetActiveOrClosestAcademicYear(academicYears);
+                academicYearStartYear = int.Parse(academicYear.Year.Split("/")[0]);
+                Term closestTerm = academicYear.Terms.OrderBy(t =>
+                    (DateTime.Now >= t.StartDate && DateTime.Now <= t.EndDate) ? 0 :
+                    Math.Min((DateTime.Now - t.StartDate).Days, (t.EndDate - DateTime.Now).Days)
+                ).First();
+                academicYear.Terms.FirstOrDefault(e => e.Id == closestTerm.Id).IsActive = true;
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+        finally
+        {
+
+        }
+    }
+    protected override async Task OnInitializedAsync()
+    {   
+        isBusy = true;
+        await Task.Run(load);
+        isBusy = false;
+
+        //  AuthenticationViewModel.IsBusy = false;
+    }
+
+
+
+    private async Task HandleIsVisibleChanged(bool isVisible)
+    {
+        isManageStaffTypeVisible = isVisible;
+    }
+
+    private void ToggleShowStaffTypeModal()
+    {
+        isManageStaffTypeVisible = !isManageStaffTypeVisible;
+        if (!isManageStaffTypeVisible)
+        {
+            typeOfStaff = new();
+        }
+
+    }
+
+    private async Task HandleIsVisibleChanged2(bool isVisible)
+    {
+        isManageHolidayVisible = isVisible;
+    }
+
+    private void ToggleShowHoliday()
+    {
+        isManageHolidayVisible = !isManageHolidayVisible;
+        if (!isManageHolidayVisible)
+        {
+            holiday = new();
+        }
+
+    }
+
+    private void ChangeAcademicYearTerms(int year)
+    {
+        academicYearStartYear = year;
+        academicYear = academicYears.FirstOrDefault(e => int.Parse(e.Year.Split("/")[0]) == academicYearStartYear);
+        if (academicYear == null)
+        {
+            academicYear = new();
+            academicYear.Terms = new List<Term>();
+
+            Term term1 = new()
+                {
+                    Id = Guid.NewGuid(),
+                    StartDate = DateTime.Now,
+                    EndDate = DateTime.Now,
+                    TenantId = Guid.Parse("00000000-0000-0000-0000-000000000000"),
+                    Name = "Term 1",
+                    IsActive = false
+                };
+            Term term2 = new()
+                {
+                    Id = Guid.NewGuid(),
+                    StartDate = DateTime.Now,
+                    EndDate = DateTime.Now,
+                    TenantId = Guid.Parse("00000000-0000-0000-0000-000000000000"),
+                    Name = "Term 2",
+                    IsActive = false
+                };
+            Term term3 = new()
+                {
+
+                    Id = Guid.NewGuid(),
+                    StartDate = DateTime.Now,
+                    EndDate = DateTime.Now,
+                    TenantId = Guid.Parse("00000000-0000-0000-0000-000000000000"),
+                    Name = "Term 3",
+                    IsActive = false
+                };
+            academicYear.Terms.Add(term1);
+            academicYear.Terms.Add(term2);
+            academicYear.Terms.Add(term3);
+        }
+    }
+
+
+    private void SaveOrUpdateAcademicYear()
+    {
+        try{
+            academicYear.Year = academicYearStartYear + "/" + (academicYearStartYear + 1);
+
+            if (academicYear.Id == Guid.Empty)
+            {
+                academicYear.Id = Guid.NewGuid();
+                academicYear.TenantId = Guid.Parse("00000000-0000-0000-0000-000000000000");
+                MyDbContext.AcademicYears.Add(academicYear);
+                academicYear.IsActive = true;
+            }
+            else
+            {
+                MyDbContext.AcademicYears.Update(academicYear);
+            }
+            MyDbContext.SaveChanges();
+        }catch (Exception ex)
+        {
+
+
+        }
+    }
+
+    private void AddOrUpdateStaffTypeAndClose()
+    {
+        AddOrUpdateStaffType();
+        ToggleShowStaffTypeModal();
+    }
+
+    private void AddOrUpdateStaffType()
+    {
+        try{
+            typeOfStaff.IdPrefix = typeOfStaff.IdPrefix.ToUpper();
+            if (typeOfStaff.Id == Guid.Empty)
+            {
+                typeOfStaff.Id = Guid.NewGuid();
+                typeOfStaff.TenantId = Guid.Parse("00000000-0000-0000-0000-000000000000");
+                typeOfStaff.IsDeleted = false;
+                MyDbContext.TypeOfStaffs.Add(typeOfStaff);
+                typesOfStaff.Add(typeOfStaff);
+            }
+            else
+            {
+                MyDbContext.TypeOfStaffs.Update(typeOfStaff);
+                int index = typesOfStaff.FindIndex(e => e.Id == typeOfStaff.Id);
+                typesOfStaff[index] = typeOfStaff;
+            }
+            MyDbContext.SaveChanges();
+            typeOfStaff = new();
+
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+
+    private async Task addNewEmployee()
+    {
+
+    }
+    private void AddOrUpdateHolidayAndClose()
+    {
+        AddOrUpdateHoliday();
+        ToggleShowHoliday();
+    }
+    private void AddOrUpdateHoliday()
+    {
+        try
+        {
+            if (holiday.Id == Guid.Empty)
+            {
+                holiday.Id = Guid.NewGuid();
+                holiday.TenantId = Guid.Parse("00000000-0000-0000-0000-000000000000");
+                holiday.IsDeleted = false;
+                MyDbContext.Holidays.Add(holiday);
+                holidays.Add(holiday);
+            }
+            else
+            {
+                MyDbContext.Holidays.Update(holiday);
+                int index = holidays.FindIndex(e => e.Id == holiday.Id);
+                holidays[index] = holiday;
+            }
+            MyDbContext.SaveChanges();
+            holiday = new();
+            holiday.StartDate = DateTime.Now;
+            holiday.EndDate = DateTime.Now;
+
+        }
+        catch (Exception ex)
+        {
+
+        }
+
+    }
+
+
+
+    bool showDeleteStaffType = false;
+    private void HandleDeleteStaffTypeChanged(bool isVisible)
+    {
+        showDeleteStaffType = isVisible;
+    }
+
+    private void ToggleDeleteStaffTypeClose()
+    {
+        showDeleteStaffType = !showDeleteStaffType;
+    }
+
+    private void DeleteStaffType()
+    {
+        typeOfStaff.IsDeleted = true;
+        AddOrUpdateStaffType();
+        ToggleDeleteStaffTypeClose();
+    }
+
+
+
+
+    bool showDeleteHoliday = false;
+    private void HandleDeleteHolidayChanged(bool isVisible)
+    {
+        showDeleteHoliday = isVisible;
+    }
+
+    private void ToggleDeleteHolidayClose()
+    {
+        showDeleteHoliday = !showDeleteHoliday;
+    }
+
+    private void DeleteHoliday()
+    {
+        holiday.IsDeleted = true;
+        AddOrUpdateHoliday();
+        ToggleDeleteHolidayClose();
+    }
+
+}

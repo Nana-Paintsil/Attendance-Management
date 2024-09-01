@@ -1,0 +1,56 @@
+.fadeIn[b-1zcfwi9fed] {
+    animation: fade-in-b-1zcfwi9fed 0.3s ease-in; /* Fade-in animation */
+}
+
+@keyframes fade-in-b-1zcfwi9fed {
+    from {
+        background-color: rgba(0, 0, 0, 0); /* Start with transparent background */
+    }
+
+    to {
+        background-color: rgba(0, 0, 0, 0.5); /* Fade in to semi-transparent background */
+    }
+}
+
+
+.show-popup[b-1zcfwi9fed] {
+    animation: show-popup-b-1zcfwi9fed 0.5s ease-in-out forwards; 
+}
+
+@keyframes show-popup-b-1zcfwi9fed {
+    0% {
+        transform: scale(.7);
+        visibility: visible;
+        opacity: 0;
+    }
+
+    45% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    80% {
+        transform: scale(.95);
+    }
+
+    100% {
+        transform: scale(1);
+        visibility: visible;
+    }
+}
+
+.hide-popup[b-1zcfwi9fed] {
+    animation: hide-popup-b-1zcfwi9fed 0.5s forwards; /* Animation to hide the popup */
+}
+
+@keyframes hide-popup-b-1zcfwi9fed {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(.5);
+        opacity: 0;
+    }
+}

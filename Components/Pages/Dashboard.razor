@@ -1,0 +1,223 @@
+﻿@page "/dashboard"
+@using BlazorBootstrap;
+@using System.Globalization;
+    
+
+<div style="margin: 0 20px; display: flex; flex-direction: column">
+
+        <h4>Dashboard</h4>
+
+<div style="display: flex;margin-top: 4px">
+
+    <div style="width: 100%; align-items: center;padding: 20px;box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);">
+
+        <div style="display: flex; flex-direction: column">
+            <div style="display: flex; justify-content: space-between;align-items: center"><h6><b>Attendance Overview</b></h6>
+             <div style="display: flex">
+                    <div style="margin-right: 20px;">
+                        <label for="startDate">From:</label>
+                        <input id="startDate" type="date" @bind="StartDate" @bind:event="oninput" @onchange="UpdateValue" />
+                    </div>
+
+                    <div>
+                        <label for="endDate">To:</label>
+                        <input id="endDate" type="date" @bind="EndDate" @bind:event="oninput" @onchange="UpdateValue" />
+                    </div>
+             </div>
+            </div>
+            <div style="display: flex; justify-content: space-between;align-items: center;margin-top: 8px">
+            <p class="titleSubtext" style="margin:0">An analysis of the attendees who arrived after set time.</p>
+
+            <div>
+                <input type="time" @bind="@timeString" @bind:event="oninput" @onchange="UpdateValue" />
+            </div>
+            </div>
+        </div>
+        <BarChart @ref="barChart" Style="height: 100%;" Class="mb-4" />
+    </div>
+</div>
+</div>
+@code {
+    private BarChart barChart = default!;
+    private BarChartOptions barChartOptions = default!;
+    private ChartData chartData = default!;
+    List<TypeOfStaff> typesOfStaff = new();
+    List<string> chartLabels = new();
+    List<AttendanceRecord> earlyAttendees = new();
+    List<AttendanceRecord> lateAttendees = new();
+    List<AnalysisService> passData = new();
+    DateTime StartDate { get; set; }
+    DateTime EndDate { get; set; }
+
+    private TimeSpan CutoffTime = TimeSpan.FromHours(8);
+
+    private DateTime timeString;
+
+    private async Task UpdateValue()
+    {
+        CutoffTime = timeString.TimeOfDay;
+        LoadChartData();
+        await barChart.UpdateAsync(chartData, barChartOptions);
+    }
+
+    int percentagePresent(TypeOfStaff typeOfStaff)
+    {   
+        if (typeOfStaff.Employees.Count() == 0)
+        {
+            return 0;
+        }
+        return (int)(numberPresent(typeOfStaff) / typeOfStaff.Employees.Count());
+    }
+    int numberPresent(TypeOfStaff typeOfStaff)
+    {
+        var result = MyDbContext.AttendanceRecords.Where(e => typeOfStaff.Employees.Contains(e.Employee)).Include(e => e.Employee).Distinct().ToList();
+        return result.Where(e => e.Date.Date == DateTime.Now.Date).Count();
+    }
+
+    public void GetEarlyAndLateAttendees()
+    {
+        var recordsInRange = MyDbContext.AttendanceRecords.Where(r => r.Date >= StartDate && r.Date <= EndDate);
+
+        earlyAttendees = recordsInRange.Where(r => r.SignInTime.HasValue && r.SignInTime < r.Date.Date.Add(CutoffTime)).ToList();
+
+        lateAttendees = recordsInRange.Where(r => r.SignInTime.HasValue && r.SignInTime > r.Date.Date.Add(CutoffTime)).ToList();
+
+    }
+
+    protected override void OnInitialized()
+    {
+        timeString = DateTime.Now.Date + CutoffTime;
+        DateTime today = DateTime.Today;
+        DateTime monday = today.AddDays(-(int)today.DayOfWeek + 1);
+        StartDate = monday;
+         
+        // Set EndDate to today
+        EndDate = today;
+        typesOfStaff = MyDbContext.TypeOfStaffs.Include(e => e.Employees.Where(e => e.IsDeleted == false)).Where(e =>
+            e.IsDeleted == false
+        ).ToList();
+        LoadChartData();
+    }
+
+    private void LoadChartData()
+    {
+        var colors = ColorBuilder.CategoricalTwelveColors;
+        var passChartItems = AnalysisService.GenerateAttendanceData(StartDate, EndDate, CutoffTime);
+
+        var chartLabels = passChartItems.Select(item => item.DayOfWeek).ToList();
+
+        var datasets = new List<IChartDataset>();
+
+        var earlyAttendeesData = passChartItems.Select(item => (double)item.EarlyAttendees).ToList();
+        var lateAttendeesData = passChartItems.Select(item => (double)item.LateAttendees).ToList();
+
+        var dataset1 = new BarChartDataset()
+            {
+                Label = "Early Attendees",
+                Data = earlyAttendeesData,
+                BackgroundColor = new List<string> { colors[0] },
+                BorderColor = new List<string> { colors[0] },
+                BorderWidth = new List<double> { 0 },
+            };
+        datasets.Add(dataset1);
+
+        var dataset2 = new BarChartDataset()
+            {
+                Label = "Late Attendees",
+                Data = lateAttendeesData,
+                BackgroundColor = new List<string> { colors[1] },
+                BorderColor = new List<string> { colors[1] },
+                BorderWidth = new List<double> { 0 },
+            };
+        datasets.Add(dataset2);
+
+
+        chartData = new ChartData
+            {
+                Labels = chartLabels,
+                Datasets = datasets
+            };
+
+        barChartOptions = new();
+        barChartOptions.Locale = "en-US";
+        barChartOptions.Responsive = true;
+        barChartOptions.Interaction = new Interaction { Mode = InteractionMode.Y };
+        barChartOptions.IndexAxis = "y";
+
+        barChartOptions.Scales.X!.Title!.Text = "Staff";
+        barChartOptions.Scales.X.Title.Display = true;
+
+        barChartOptions.Scales.Y!.Title!.Text = "Days";
+        barChartOptions.Scales.Y.Title.Display = true;
+
+        barChartOptions.Scales.X.Stacked = true;
+        barChartOptions.Scales.Y.Stacked = true;
+
+        barChartOptions.Plugins.Title!.Text = "Attendance";
+        barChartOptions.Plugins.Title.Display = false;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await barChart.InitializeAsync(chartData, barChartOptions);
+        }
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    
+
+    public class AttendanceLog
+{
+    public string EmployeeName { get; set; }
+    public string TimeOfLogin { get; set; }
+}
+    public List<AttendanceLog> GetRecentAttendanceLogs()
+    {
+        // Retrieve the five most recent attendance records
+        var recentAttendance = MyDbContext.AttendanceRecords.ToList()
+            .OrderByDescending(record => record.SignInTime)
+            .Take(5)
+            .ToList();
+
+        // Create a list to store the attendance logs
+        var attendanceLogs = new List<AttendanceLog>();
+
+        // Loop through each recent attendance record
+        foreach (var record in recentAttendance)
+        {
+            // Calculate the time difference
+            TimeSpan timeDifference = record.SignInTime.Value.TimeOfDay - DateTime.Now.TimeOfDay;
+
+            // Format the time difference into a human-readable string
+            string timeAgo;
+            if (timeDifference.TotalMinutes < 1)
+            {
+                timeAgo = "just now";
+            }
+            else if (timeDifference.TotalHours < 1)
+            {
+                timeAgo = $"{(int)timeDifference.TotalMinutes} minute{(timeDifference.TotalMinutes >= 2 ? "s" : "")} ago";
+            }
+            else if (timeDifference.TotalDays < 1)
+            {
+                timeAgo = $"{(int)timeDifference.TotalHours} hour{(timeDifference.TotalHours >= 2 ? "s" : "")} ago";
+            }
+            else
+            {
+                timeAgo = $"{(int)timeDifference.TotalDays} day{(timeDifference.TotalDays >= 2 ? "s" : "")} ago";
+            }
+
+            // Create an AttendanceLog object and add it to the list
+            attendanceLogs.Add(new AttendanceLog
+                {
+                    EmployeeName = record.Employee.FirstName + " " + record.Employee.LastName,
+                    TimeOfLogin = timeAgo
+                });
+        }
+
+
+        return attendanceLogs;
+    }
+}

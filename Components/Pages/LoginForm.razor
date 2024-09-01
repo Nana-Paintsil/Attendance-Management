@@ -1,0 +1,371 @@
+﻿@page "/"
+@layout NoMenuLayout
+@using System.Threading.Tasks
+
+<Modal IsVisible="@isInvalidCredentialsVisible" Width="300px" IsVisibleChanged="HandleIsVisibleChanged">
+    <div class="modal-header">
+        <h3 style="font-size: 1.2rem;">Authentication Error!</h3>
+    </div>
+    <div class="modal-body">
+     <p>Invalid Username or Password</p>
+    </div>
+
+    <div class="modal-footer">
+
+        <button class="btn btn-secondary btn-small" @onclick="ToggleInvalidCredentials">OK</button>
+    </div>
+</Modal>
+
+
+
+
+<Modal IsVisible="@userSignedInAlready" IsVisibleChanged="HandleIsVisibleChanged2">
+    <div class="modal-header">
+        <h3 style="font-size: 1.2rem;">Information</h3>
+    </div>
+    <div class="modal-body">
+     <p>You have already signed in. Do you wish to sign out?</p>
+    </div>
+
+    <div class="modal-footer" style="align-items: flex-end">
+
+        <button class="btn btn-primary btn-small"   style="margin-right: 8px"  @onclick="ToggleUserSignedIn">No</button>
+        <button class="btn btn-secondary btn-small" @onclick="SignUserOut">Yes</button>
+    </div>
+</Modal>
+
+
+<Modal IsVisible="@showSignOutForm" IsVisibleChanged="HandleIsVisibleChanged3">
+    <div class="modal-header">
+        <h3 style="font-size: 1.2rem;">Information</h3>
+    </div>
+    <div class="modal-body">
+        <p>Enter password to sign out</p>
+    </div>
+    <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+
+        <div class="input-icons">
+            <i class="fas fa-lock icon"></i>
+            <input class="input-field" type="password" placeholder="Password" @bind="@SignOutPassword" @bind:event="oninput" required>
+        </div>
+
+    </div>
+
+    <div class="modal-footer" style="align-items: flex-end">
+
+        <button class="btn btn-secondary btn-small" @onclick="SignUserOutWithPassword">Sign Out</button>
+    </div>
+</Modal>
+
+
+<Modal IsVisible="@showSignOutSuccessful" IsVisibleChanged="HandleIsVisibleChanged4">
+    <div class="modal-header">
+        <h3 style="font-size: 1.2rem;">Information</h3>
+    </div>
+    <div class="modal-body">
+        <p>Signed Out Successfully</p>
+    </div>
+
+    <div class="modal-footer" style="align-items: flex-end">
+        <button class="btn btn-secondary btn-small" @onclick="ToggleSignOutSuccessful">OK</button>
+    </div>
+</Modal>
+
+
+<Modal IsVisible="@showSignOutUnsuccessful" IsVisibleChanged="HandleIsVisibleChanged5">
+    <div class="modal-header">
+        <h3 style="font-size: 1.2rem;">Information</h3>
+    </div>
+    <div class="modal-body">
+        <p>Incorrect Password Entered</p>
+    </div>
+
+    <div class="modal-footer" style="align-items: flex-end">
+        <button class="btn btn-secondary btn-small" @onclick="ToggleSignOutUnsuccessful">OK</button>
+    </div>
+</Modal>
+
+
+
+
+
+
+@if (isLoading == true)
+{
+    <CheckSuccessful Message="@welcomeMessage" IsDoneSpinning="@isDoneSpinning" />
+}
+else
+{
+<div class="login-page">
+    <div class="login-card">
+        <h2 class="login-title">Sign In</h2>
+
+        <p>Welcome Back! Please enter your details</p>
+            <form @onsubmit="Load">
+            <div class="form-group">
+                <label for="email" class="form-label">Username</label>
+               
+                  <div class="input-icons">
+                    <i class="fas fa-user icon"></i>
+                    <input class="input-field" type="text" placeholder="Username" @bind="@userCred.Email" @bind:event="oninput" required>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                
+                   <div class="input-icons">
+                    <i class="fas fa-lock icon"></i>
+                    <input class="input-field" type="password" placeholder="Password" @bind="@userCred.Password" @bind:event="oninput" required>
+                </div>
+
+            </div>
+            </form>
+                @if (isLoading == false)
+                {
+                <button @onclick="Load" style="width: 100% !important" class="btn-primary" disabled="@(string.IsNullOrEmpty(userCred.Email) || string.IsNullOrEmpty(userCred.Password))">Login</button>
+                }
+                else
+                {
+
+                <button class="btn-primary" style="width: 100% !important" disabled><div class="loader"></div></button>
+
+                }
+    </div>
+</div>
+
+}
+
+
+@code {
+    bool isLoading = false;
+    bool isDoneSpinning = false;
+    UserAuth newUserAuth = new();
+    Employee lastEmployee = new();
+    UserCred userCred = new();
+    String welcomeMessage = "";
+
+    String SignOutPassword = ""; 
+    private bool disableLogin = true;
+    private bool isInvalidCredentialsVisible = false;
+    private bool userSignedInAlready = false;
+    private bool showSignOutForm = false;
+    private bool showSignOutSuccessful = false;
+    private bool showSignOutUnsuccessful = false;
+
+    private void UpdateButtonState(ChangeEventArgs e)
+    {
+        disableLogin = string.IsNullOrEmpty(userCred.Email) || string.IsNullOrEmpty(userCred.Password);
+    }
+
+
+
+    private async Task SyncDatabase()
+    {
+        await Sync.ExecuteSyncCommand(Dotmim.Sync.Enumerations.SyncType.Normal);
+    }
+    private void HandleIsVisibleChanged(bool isVisible)
+    {
+        isInvalidCredentialsVisible = isVisible;
+    }
+
+    private void ToggleInvalidCredentials()
+    {
+        isInvalidCredentialsVisible = !isInvalidCredentialsVisible;
+    }
+
+
+    private void HandleIsVisibleChanged2(bool isVisible)
+    {
+        userSignedInAlready = isVisible;
+    }
+
+
+
+
+    private void ToggleEnterSignOut()
+    {
+        showSignOutForm = !showSignOutForm;
+    }
+
+    private void HandleIsVisibleChanged3(bool isVisible)
+    {
+        showSignOutForm = isVisible;
+    }
+
+
+
+
+    private void ToggleSignOutSuccessful()
+    {
+        showSignOutSuccessful = !showSignOutSuccessful;
+    }
+
+
+    private void HandleIsVisibleChanged4(bool isVisible)
+    {
+        showSignOutSuccessful = isVisible;
+    }
+
+
+
+
+    private void ToggleSignOutUnsuccessful()
+    {
+        showSignOutUnsuccessful = !showSignOutUnsuccessful;
+    }
+
+
+    private void HandleIsVisibleChanged5(bool isVisible)
+    {
+        showSignOutUnsuccessful = isVisible;
+    }
+
+
+    private void ToggleUserSignedIn()
+    {
+        userSignedInAlready = !userSignedInAlready;
+    }
+
+    private void SignUserOut()
+    {
+        var record = MyDbContext.AttendanceRecords.ToList().FirstOrDefault(e => e.EmployeeId == lastEmployee.Id && e.Date.Date == DateTime.Now.Date && e.SignOutTime == null);
+        if (record != null){
+            record.SignOutTime = DateTime.Now;
+            MyDbContext.AttendanceRecords.Update(record);
+            MyDbContext.SaveChanges();
+            userSignedInAlready = true;
+            userCred = new();
+        }
+
+        ToggleUserSignedIn();
+    }
+
+    private async Task SignUserOutWithPassword()
+    {
+        var check = await checkCredentials(lastEmployee.Username, SignOutPassword);
+        if (check)
+        {
+            var record = MyDbContext.AttendanceRecords.ToList().FirstOrDefault(e => e.EmployeeId == lastEmployee.Id && e.Date.Date == DateTime.Now.Date && e.SignOutTime == null);
+            if (record != null){
+                  record.SignOutTime = DateTime.Now;
+                    MyDbContext.AttendanceRecords.Update(record);
+                    MyDbContext.SaveChanges();
+                    SignOutPassword = "";
+                    showSignOutSuccessful = true;
+            }
+          
+        }
+        else
+        {
+            showSignOutUnsuccessful = false;
+        }
+    }
+
+    private async Task<bool> checkCredentials(String Username, String Password){
+        var userAuth = await MyDbContext.UserAuths.FirstOrDefaultAsync(item => item.Username == Username.ToUpper());
+
+        if (userAuth == null)
+        {   
+            isInvalidCredentialsVisible = true;
+            return false;
+        }
+        var credentialsCorrect = SecretHasher.Verify(Password, userAuth.PasswordHash);
+        if (!credentialsCorrect)
+        {
+            isInvalidCredentialsVisible = true;
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+
+    async Task Load()
+    {
+
+        isLoading = true;
+        StateHasChanged();
+
+
+        var employee = await Login();
+
+        if (employee != null)
+        {
+
+            await Task.Delay(1200);
+            isDoneSpinning = true;
+            welcomeMessage = $"Hi {employee.Title} {employee.LastName}, you're checked in the system.";
+            StateHasChanged();
+            await Task.Delay(2200);
+            welcomeMessage = "";
+            userCred = new();
+        }
+        isLoading = false;
+        isDoneSpinning = false;
+        StateHasChanged();
+
+    }
+    async Task<Employee?> Login()
+    {   
+        try{
+            var userAuth = await MyDbContext.UserAuths.FirstOrDefaultAsync(item => item.Username == userCred.Email.ToUpper());
+
+            if (userAuth == null)
+            {   
+                isInvalidCredentialsVisible = true;
+                return null;
+            }
+            var credentialsCorrect = SecretHasher.Verify(userCred.Password, userAuth.PasswordHash);
+            if (!credentialsCorrect)
+            {
+                isInvalidCredentialsVisible = true;
+                return null;
+            }
+            /// Generate Token
+            if (userCred.Email.ToUpper() == "BMA000")
+            {
+                NavigationManager.NavigateTo("/dashboard");
+                return null;
+            }
+            var user = await MyDbContext.Employees.FirstOrDefaultAsync(item => item.Username == userCred.Email);
+         
+            AttendanceRecord attendanceRecord = new()
+            {
+                Id = Guid.NewGuid(),
+                TenantId = user.TenantId,
+                Date = DateTime.Now,
+                Employee = user,
+                EmployeeId = user.Id,   
+                SignInTime = DateTime.Now,
+                SignOutTime = null,
+            };
+            lastEmployee = user;
+            
+            if (MyDbContext.AttendanceRecords.ToList().FirstOrDefault(e => e.EmployeeId == user.Id && e.Date.Date == DateTime.Now.Date && e.SignOutTime == null) == null)
+            {
+
+                MyDbContext.AttendanceRecords.Add(attendanceRecord);
+                MyDbContext.SaveChanges();
+                return user;
+            }
+            else
+            {
+                userSignedInAlready = true;
+                return null;
+            }
+            
+        }
+
+        catch(Exception ex)
+        {   
+            isInvalidCredentialsVisible = true;
+            return null;
+        }
+
+    }
+
+
+
+}

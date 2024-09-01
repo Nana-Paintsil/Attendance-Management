@@ -1,0 +1,43 @@
+﻿@inherits LayoutComponentBase
+
+<Modal IsVisible="@LogoutService.IsLogoutFormVisible" Width="300px" IsVisibleChanged="HandleIsVisibleChanged">
+    <div class="modal-header">
+        <h3 style="font-size: 1.2rem;">Confirmation</h3>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <p>Do you want to log out as Administrator?</p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" style="margin-right: 8px" @onclick="Logout">Logout</button>
+        <button class="btn btn-secondary" @onclick="LogoutService.ToggleLogoutForm">Cancel</button>
+    </div>
+</Modal>
+
+<div class="page" style="min-height: 100vh;">
+    <div class="sidebar" style="height: 100vh;background: #f6f8f9;width: 20%">
+        <NavMenu />
+    </div>
+
+
+    <div style="height: 100vh;width: 80%">
+        @Body
+    </div>
+
+</div>
+
+@code {
+    public static bool showLogoutForm = false;
+
+    private void HandleIsVisibleChanged(bool isVisible)
+    {
+        LogoutService.ToggleLogoutForm();
+    }
+
+    private async Task Logout()
+    {
+        NavigationManager.NavigateTo("/");
+        showLogoutForm = false;
+    }
+}
